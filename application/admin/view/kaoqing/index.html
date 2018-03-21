@@ -1,0 +1,413 @@
+<style>
+    .trees li {
+        list-style-type: none;
+        margin: 0;
+        padding: 10px 5px 0 5px;
+        position: relative
+    }
+
+    .trees li::before, .trees li::after {
+        content: '';
+        left: -20px;
+        position: absolute;
+        right: auto
+    }
+
+    .trees li::before {
+        border-left: 1px solid #999;
+        bottom: 50px;
+        height: 100%;
+        top: 0;
+        width: 1px
+    }
+
+    .trees li::after {
+        border-top: 1px solid #999;
+        height: 20px;
+        top: 25px;
+        width: 25px
+    }
+
+    .trees li span {
+        -moz-border-radius: 5px;
+        -webkit-border-radius: 5px;
+        border: 1px solid #999;
+        border-radius: 5px;
+        display: inline-block;
+        padding: 3px 8px;
+        text-decoration: none
+    }
+
+    .trees li.parent_li > span {
+        cursor: pointer
+    }
+
+    .trees > ul > li::before, .tree > ul > li::after {
+        border: 0
+    }
+
+    .trees li:last-child::before {
+        height: 30px
+    }
+
+    .trees li.parent_li > span:hover, .trees li.parent_li > span:hover + ul li span {
+        background: #eee;
+        border: 1px solid #94a0b4;
+        color: #000
+    }
+</style>
+<section class="content">
+    <div class="trees well">
+        <ul>
+            <li>
+                <span><i class="icon-folder-open"></i>行政</span>
+                <ul>
+                    <li>
+                        <span><i class="icon-minus-sign"></i> 院长</span>
+                        <ul>
+                            <li>
+                                <span><i class="icon-minus-sign"></i> 院长办公室</span>
+                                <a href="{:url('/kaoqing/attendance')}" class="btn btn-info btn-flat">查看考勤</a>
+                            </li>
+                            <li>
+                                <span><i class="icon-leaf"></i> 副院长</span>
+                                <button type="button" class="btn btn-info btn-flat">查看考勤</button>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <span><i class="icon-minus-sign"></i> 档案室</span>
+                        <button type="button" class="btn btn-info btn-flat">查看考勤</button>
+                    </li>
+                    <li>
+                        <span><i class="icon-minus-sign"></i> 党委</span>
+                        <button type="button" class="btn btn-info btn-flat">查看考勤</button>
+                    </li>
+                    <li>
+                        <span><i class="icon-minus-sign"></i>团委办公室</span>
+                        <button type="button" class="btn btn-info btn-flat">查看考勤</button>
+                    </li>
+                    <li>
+                        <span><i class="icon-minus-sign"></i>宣传科</span>
+                        <button type="button" class="btn btn-info btn-flat">查看考勤</button>
+                    </li>
+                    <li>
+                        <span><i class="icon-minus-sign"></i>保卫科</span>
+                        <button type="button" class="btn btn-info btn-flat">查看考勤</button>
+                    </li>
+                    <li>
+                        <span><i class="icon-minus-sign"></i>医务处</span>
+                        <ul>
+                            <li>
+                                <span><i class="icon-leaf"></i>科教科</span>
+                                <button type="button" class="btn btn-info btn-flat">查看考勤</button>
+                            </li>
+                            <li>
+                                <span><i class="icon-leaf"></i>医保办</span>
+                                <button type="button" class="btn btn-info btn-flat">查看考勤</button>
+                            </li>
+                            <li>
+                                <span><i class="icon-leaf"></i>保健科</span>
+                                <button type="button" class="btn btn-info btn-flat">查看考勤</button>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <span><i class="icon-minus-sign"></i>护理部</span>
+                        <ul>
+                            <li>
+                                <span><i class="icon-leaf"></i>护理部主任</span>
+                                <button type="button" class="btn btn-info btn-flat">查看考勤</button>
+                            </li>
+                            <li>
+                                <span><i class="icon-leaf"></i>外科总护士长</span>
+                                <button type="button" class="btn btn-info btn-flat">查看考勤</button>
+                            </li>
+                            <li>
+                                <span><i class="icon-leaf"></i>内科总护士长</span>
+                                <button type="button" class="btn btn-info btn-flat">查看考勤</button>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <span><i class="icon-minus-sign"></i>工会</span>
+                        <button type="button" class="btn btn-info btn-flat">查看考勤</button>
+                    </li>
+                    <li>
+                        <span><i class="icon-minus-sign"></i>人事处</span>
+                        <ul>
+                            <li>
+                                <span><i class="icon-leaf"></i>劳动工资科</span>
+                                <button type="button" class="btn btn-info btn-flat">查看考勤</button>
+                            </li>
+                            <li>
+                                <span><i class="icon-leaf"></i>组织科</span>
+                                <button type="button" class="btn btn-info btn-flat">查看考勤</button>
+                            </li>
+                            <li>
+                                <span><i class="icon-leaf"></i>职改办</span>
+                                <button type="button" class="btn btn-info btn-flat">查看考勤</button>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <span><i class="icon-minus-sign"></i>信息科</span>
+                        <ul>
+                            <li>
+                                <span><i class="icon-leaf"></i>病案统计科</span>
+                                <button type="button" class="btn btn-info btn-flat">查看考勤</button>
+                            </li>
+                            <li>
+                                <span><i class="icon-leaf"></i>图书馆</span>
+                                <button type="button" class="btn btn-info btn-flat">查看考勤</button>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <span><i class="icon-minus-sign"></i>财务处</span>
+                        <button type="button" class="btn btn-info btn-flat">查看考勤</button>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <span><i class="icon-folder-open"></i> 后勤</span>
+                <ul>
+                    <li>
+                        <span><i class="icon-minus-sign"></i> 总务处</span>
+                        <button type="button" class="btn btn-info btn-flat">查看考勤</button>
+                    <li>
+                        <span><i class="icon-minus-sign"></i> 设备科</span>
+                        <button type="button" class="btn btn-info btn-flat">查看考勤</button>
+                    </li>
+                    <li>
+                        <span><i class="icon-leaf"></i> 基建科</span>
+                        <button type="button" class="btn btn-info btn-flat">查看考勤</button>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <span><i class="icon-minus-sign"></i> 医学辅助室</span>
+                <ul>
+                    <li>
+                        <span><i class="icon-minus-sign"></i> 功能医技科室</span>
+                        <button type="button" class="btn btn-info btn-flat">查看考勤</button>
+                    </li>
+                    <li>
+                        <span><i class="icon-minus-sign"></i> 检验科</span>
+                        <ul>
+                            <li>
+                                <span><i class="icon-leaf"></i>门诊检验</span>
+                                <button type="button" class="btn btn-info btn-flat">查看考勤</button>
+                            </li>
+                            <li>
+                                <span><i class="icon-leaf"></i>病房检验</span>
+                                <button type="button" class="btn btn-info btn-flat">查看考勤</button>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <span><i class="icon-leaf"></i> 病理科</span>
+                        <button type="button" class="btn btn-info btn-flat">查看考勤</button>
+                    </li>
+                    <li>
+                        <span><i class="icon-minus-sign"></i> 影像学</span>
+                        <button type="button" class="btn btn-info btn-flat">查看考勤</button>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <span><i class="icon-minus-sign"></i>膳食营养科</span>
+                <button type="button" class="btn btn-info btn-flat">查看考勤</button>
+            </li>
+            <li>
+                <span><i class="icon-minus-sign"></i> 门诊办公室</span>
+                <button type="button" class="btn btn-info btn-flat">查看考勤</button>
+            </li>
+            <li>
+                <span><i class="icon-minus-sign"></i> 急诊室</span>
+                <button type="button" class="btn btn-info btn-flat">查看考勤</button>
+            </li>
+            <li>
+                <span><i class="icon-leaf"></i> 住院部</span>
+                <button type="button" class="btn btn-info btn-flat">查看考勤</button>
+            </li>
+            <li>
+                <span><i class="icon-minus-sign"></i> 外科</span>
+                <ul>
+                    <li>
+                        <span><i class="icon-leaf"></i> 神经外科</span>
+                        <button type="button" class="btn btn-info btn-flat">查看考勤</button>
+                    </li>
+                    <li>
+                        <span><i class="icon-leaf"></i> 甲乳外科</span>
+                        <button type="button" class="btn btn-info btn-flat">查看考勤</button>
+                    </li>
+                    <li>
+                        <span><i class="icon-leaf"></i> 胸外科</span>
+                        <button type="button" class="btn btn-info btn-flat">查看考勤</button>
+                    </li>
+                    <li>
+                        <span><i class="icon-leaf"></i> 心外科</span>
+                        <button type="button" class="btn btn-info btn-flat">查看考勤</button>
+                    </li>
+                    <li>
+                        <span><i class="icon-leaf"></i> 肝胆外科</span>
+                        <button type="button" class="btn btn-info btn-flat">查看考勤</button>
+                    </li>
+                    <li>
+                        <span><i class="icon-leaf"></i> 胃肠外科</span>
+                        <button type="button" class="btn btn-info btn-flat">查看考勤</button>
+                    </li>
+                    <li>
+                        <span><i class="icon-leaf"></i> 泌尿外科</span>
+                        <button type="button" class="btn btn-info btn-flat">查看考勤</button>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <span><i class="icon-minus-sign"></i> 内科</span>
+                <ul>
+                    <li>
+                        <span><i class="icon-leaf"></i> 皮肤科</span>
+                        <button type="button" class="btn btn-info btn-flat">查看考勤</button>
+                    </li>
+                    <li>
+                        <span><i class="icon-leaf"></i> 血液科</span>
+                        <button type="button" class="btn btn-info btn-flat">查看考勤</button>
+                    </li>
+                    <li>
+                        <span><i class="icon-leaf"></i> 消化内科</span>
+                        <button type="button" class="btn btn-info btn-flat">查看考勤</button>
+                    </li>
+                    <li>
+                        <span><i class="icon-leaf"></i> 神经内科</span>
+                        <button type="button" class="btn btn-info btn-flat">查看考勤</button>
+                    </li>
+                    <li>
+                        <span><i class="icon-leaf"></i> 肾内科</span>
+                        <button type="button" class="btn btn-info btn-flat">查看考勤</button>
+                    </li>
+                    <li>
+                        <span><i class="icon-leaf"></i> 呼吸科</span>
+                        <button type="button" class="btn btn-info btn-flat">查看考勤</button>
+                    </li>
+                    <li>
+                        <span><i class="icon-leaf"></i> 传染病科</span>
+                        <button type="button" class="btn btn-info btn-flat">查看考勤</button>
+                    </li>
+                    <li>
+                        <span><i class="icon-leaf"></i> 肠道科</span>
+                        <button type="button" class="btn btn-info btn-flat">查看考勤</button>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <span><i class="icon-minus-sign"></i> 口腔科</span>
+                <ul>
+                    <li>
+                        <span><i class="icon-leaf"></i> 口腔内科</span>
+                        <button type="button" class="btn btn-info btn-flat">查看考勤</button>
+                    </li>
+                    <li>
+                        <span><i class="icon-leaf"></i> 口腔外科</span>
+                        <button type="button" class="btn btn-info btn-flat">查看考勤</button>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <span><i class="icon-minus-sign"></i> 五官科</span>
+                <button type="button" class="btn btn-info btn-flat">查看考勤</button>
+            </li>
+            <li>
+                <span><i class="icon-folder-open"></i> 眼科</span>
+                <button type="button" class="btn btn-info btn-flat">查看考勤</button>
+            </li>
+            <li>
+                <span><i class="icon-minus-sign"></i> 妇产科</span>
+                <ul>
+                    <li>
+                        <span><i class="icon-leaf"></i> 妇科</span>
+                        <button type="button" class="btn btn-info btn-flat">查看考勤</button>
+                    </li>
+                    <li>
+                        <span><i class="icon-leaf"></i> 产科</span>
+                        <button type="button" class="btn btn-info btn-flat">查看考勤</button>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <span><i class="icon-folder-open"></i> 儿科</span>
+                <button type="button" class="btn btn-info btn-flat">查看考勤</button>
+            </li>
+            <li>
+                <span><i class="icon-minus-sign"></i> 肿瘤科中心</span>
+                <ul>
+                    <li>
+                        <span><i class="icon-leaf"></i> 肿瘤放疗科</span>
+                        <button type="button" class="btn btn-info btn-flat">查看考勤</button>
+                    </li>
+                    <li>
+                        <span><i class="icon-leaf"></i> 肿瘤化疗科</span>
+                        <button type="button" class="btn btn-info btn-flat">查看考勤</button>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <span><i class="icon-folder-open"></i> 美容科</span>
+                <button type="button" class="btn btn-info btn-flat">查看考勤</button>
+            </li>
+            <li>
+                <span><i class="icon-folder-open"></i> 体检</span>
+                <button type="button" class="btn btn-info btn-flat">查看考勤</button>
+            </li>
+            <li>
+                <span><i class="icon-folder-open"></i> 骨科</span>
+                <button type="button" class="btn btn-info btn-flat">查看考勤</button>
+            </li>
+            <li>
+                <span><i class="icon-folder-open"></i> 中医科</span>
+                <button type="button" class="btn btn-info btn-flat">查看考勤</button>
+            </li>
+            <li>
+                <span><i class="icon-folder-open"></i> 传染病科</span>
+                <button type="button" class="btn btn-info btn-flat">查看考勤</button>
+            </li>
+            <li>
+                <span><i class="icon-minus-sign"></i> 药剂科</span>
+                <button type="button" class="btn btn-info btn-flat">查看考勤</button>
+            </li>
+            <li>
+                <span><i class="icon-folder-open"></i> 中心供应室</span>
+                <button type="button" class="btn btn-info btn-flat">查看考勤</button>
+            </li>
+            <li>
+                <span><i class="icon-folder-open"></i> 手术室</span>
+                <button type="button" class="btn btn-info btn-flat">查看考勤</button>
+            </li>
+        </ul>
+    </div>
+</section>
+<!-- /.content -->
+<!--图标样式-->
+<link rel="stylesheet" type="text/css" href="__STATIC__/jquerytree/css/bootstrap.min.css"/>
+<!--主要样式-->
+<script type="text/javascript" src="__STATIC__/jquerytree/js/jquery-1.7.2.min.js"></script>
+<script type="text/javascript">
+    $(function () {
+        $('.trees li:has(ul)').addClass('parent_li').find(' > span');
+//                var childrens = $('.trees li.parent_li > span').parent('li.parent_li').find(' > ul > li');
+//                childrens.hide('fast');
+//                $('.trees li.parent_li > span').find(' > i').addClass('icon-plus-sign').removeClass('icon-minus-sign');
+        $('.trees li.parent_li > span').on('click', function (e) {
+            var children = $(this).parent('li.parent_li').find(' > ul > li');
+            if (children.is(":visible")) {
+                children.hide('fast');
+                $(this).find(' > i').addClass('icon-plus-sign').removeClass('icon-minus-sign');
+            } else {
+                children.show('fast');
+                $(this).find(' > i').addClass('icon-minus-sign').removeClass('icon-plus-sign');
+            }
+            e.stopPropagation();
+        });
+    });
+</script>

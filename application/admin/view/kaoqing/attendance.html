@@ -1,0 +1,101 @@
+<style>
+    .trees li {
+        list-style-type: none;
+        margin: 0;
+        padding: 10px 5px 0 5px;
+        position: relative
+    }
+
+    .trees li::before, .trees li::after {
+        content: '';
+        left: -20px;
+        position: absolute;
+        right: auto
+    }
+
+    .trees li::before {
+        border-left: 1px solid #999;
+        bottom: 50px;
+        height: 100%;
+        top: 0;
+        width: 1px
+    }
+
+    .trees li::after {
+        border-top: 1px solid #999;
+        height: 20px;
+        top: 25px;
+        width: 25px
+    }
+
+    .trees li span {
+        -moz-border-radius: 5px;
+        -webkit-border-radius: 5px;
+        border: 1px solid #999;
+        border-radius: 5px;
+        display: inline-block;
+        padding: 3px 8px;
+        text-decoration: none
+    }
+
+    .trees li.parent_li > span {
+        cursor: pointer
+    }
+
+    .trees > ul > li::before, .tree > ul > li::after {
+        border: 0
+    }
+
+    .trees li:last-child::before {
+        height: 30px
+    }
+
+    .trees li.parent_li > span:hover, .trees li.parent_li > span:hover + ul li span {
+        background: #eee;
+        border: 1px solid #94a0b4;
+        color: #000
+    }
+</style>
+<section class="content">
+    <div class="trees well">
+        <ul>
+            <li>
+                <span><i class="icon-folder-open"></i>行政</span>
+                <ul>
+                    <li>
+                        <span><i class="icon-minus-sign"></i> 院长</span>
+                        <ul>
+                            <li>
+                                <span><i class="icon-minus-sign"></i> 院长办公室</span>
+                                <button type="button" class="btn btn-info btn-flat">查看考勤</button>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+        </ul>
+    </div>
+</section>
+<!-- /.content -->
+<!--图标样式-->
+<link rel="stylesheet" type="text/css" href="__STATIC__/jquerytree/css/bootstrap.min.css"/>
+<!--主要样式-->
+<script type="text/javascript" src="__STATIC__/jquerytree/js/jquery-1.7.2.min.js"></script>
+<script type="text/javascript">
+    $(function () {
+        $('.trees li:has(ul)').addClass('parent_li').find(' > span');
+//                var childrens = $('.trees li.parent_li > span').parent('li.parent_li').find(' > ul > li');
+//                childrens.hide('fast');
+//                $('.trees li.parent_li > span').find(' > i').addClass('icon-plus-sign').removeClass('icon-minus-sign');
+        $('.trees li.parent_li > span').on('click', function (e) {
+            var children = $(this).parent('li.parent_li').find(' > ul > li');
+            if (children.is(":visible")) {
+                children.hide('fast');
+                $(this).find(' > i').addClass('icon-plus-sign').removeClass('icon-minus-sign');
+            } else {
+                children.show('fast');
+                $(this).find(' > i').addClass('icon-minus-sign').removeClass('icon-plus-sign');
+            }
+            e.stopPropagation();
+        });
+    });
+</script>

@@ -1,0 +1,13 @@
+{
+  "name": "selectpage",
+  "homepage": "https://github.com/karsonzhang/selectpage",
+  "_release": "d9220956e2",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "d9220956e218a57ad8d39cc5418a662a782317bd"
+  },
+  "_source": "https://github.com/karsonzhang/selectpage.git",
+  "_target": "*",
+  "_originalSource": "https://github.com/karsonzhang/selectpage.git"
+}
